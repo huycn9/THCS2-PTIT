@@ -1,21 +1,21 @@
 #include<stdio.h>
-
 int main()
 {
-long long a,b,i,index;
-	scanf("%lld %lld",&a,&b);
-	
-	for( i=a<b?a:b;i>=1;i--)
+	int t,n;
+	scanf("%d",&t);
+	while(t--)
 	{
-		if(a%i==0&&b%i==0){
-			printf("%lld\n",i);
-			index=i;
-			break;
+		scanf("%d",&n);
+		int i;
+		for( i=2;i<=sqrt(n);i++)
+		{
+			while(n%i==0)
+			{
+				printf("%d ",i);
+				n=n/i;
+			}
 		}
+		if(n!=1) printf("%d",n);
+		printf("\n");
 	}
-	printf("%lld",a*b/index);
 }
-	
-
-
- 
